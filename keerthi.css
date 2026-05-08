@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff4b7d,#ff758c,#ffb199);
+    color:white;
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-100px;
+    font-size:30px;
+    animation:float 10s linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    animation-duration:8s;
+}
+
+.hearts span:nth-child(2){
+    left:25%;
+    animation-duration:10s;
+}
+
+.hearts span:nth-child(3){
+    left:40%;
+    animation-duration:7s;
+}
+
+.hearts span:nth-child(4){
+    left:55%;
+    animation-duration:12s;
+}
+
+.hearts span:nth-child(5){
+    left:70%;
+    animation-duration:9s;
+}
+
+.hearts span:nth-child(6){
+    left:85%;
+    animation-duration:11s;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Pages */
+
+.page{
+    min-height:100vh;
+    padding:50px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+/* PAGE 1 */
+
+.hero h1{
+    font-size:75px;
+    margin-bottom:30px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px white;
+    }
+
+    to{
+        text-shadow:0 0 25px yellow,
+                     0 0 40px white;
+    }
+}
+
+.quote{
+    font-size:28px;
+    margin-top:20px;
+    line-height:1.7;
+}
+
+button{
+    margin-top:40px;
+    padding:18px 40px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff2e63;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#ff2e63;
+    color:white;
+    transform:scale(1.1);
+}
+
+/* PAGE 2 */
+
+.gallery-page{
+    display:none;
+}
+
+.gallery-page h2{
+    font-size:55px;
+    margin-bottom:50px;
+}
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.gallery img{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:25px;
+    border:6px solid white;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    transition:0.5s;
+}
+
+.gallery img:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+/* PAGE 3 */
+
+.love-page{
+    display:none;
+}
+
+.love-box{
+    max-width:900px;
+    background:rgba(255,255,255,0.15);
+    padding:50px;
+    border-radius:30px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.love-box h2{
+    font-size:50px;
+    margin-bottom:30px;
+}
+
+.love-box p{
+    font-size:24px;
+    line-height:2;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .quote{
+        font-size:18px;
+    }
+
+    .gallery-page h2{
+        font-size:35px;
+    }
+
+    .gallery img{
+        width:170px;
+        height:220px;
+    }
+
+    .love-box{
+        padding:30px;
+    }
+
+    .love-box h2{
+        font-size:30px;
+    }
+
+    .love-box p{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+}
